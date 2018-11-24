@@ -5,6 +5,7 @@
   </div>
 </div>
 <script>
+    console.log(<%= @currencies %>);
     Highcharts.stockChart('charts', {
 
 
@@ -20,7 +21,7 @@
             style: {
                 width: '200px'
             },
-            valueDecimals: 4,
+            valueDecimals: 2,
             shared: true
         },
 
