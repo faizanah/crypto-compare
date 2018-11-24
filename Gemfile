@@ -35,8 +35,6 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem "highcharts-rails"
-gem 'chartkick'
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 gem 'mini_racer', platforms: :ruby
