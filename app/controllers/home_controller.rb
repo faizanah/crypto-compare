@@ -2,14 +2,8 @@ require 'uri'
 require 'net/http'
 class HomeController < ApplicationController
   def index
-
-    url = URI("http://rest.coinapi.io/v1/trades/BITSTAMP_SPOT_BTC_USD/history?time_start=2016-01-01T00:00:00&limit=100000")
-    http = Net::HTTP.new(url.host, url.port)
-    request = Net::HTTP::Get.new(url)
-    request["X-CoinAPI-Key"] = 'A20D3E81-D908-4EB1-86E8-522419C1AA32'
-    @json_response = http.request(request).read_body
     @currencies = []
-    @json_response.each do |row|
+    data.each do |row|
       @currencies.push([row[:price_close], row[:time_close]])
     end
     puts @currencies
@@ -24,6 +18,11 @@ class HomeController < ApplicationController
 
 
   def data
+    # url = URI("http://rest.coinapi.io/v1/trades/BITSTAMP_SPOT_BTC_USD/history?time_start=2016-01-01T00:00:00")
+    # http = Net::HTTP.new(url.host, url.port)
+    # request = Net::HTTP::Get.new(url)
+    # request["X-CoinAPI-Key"] = 'B1ECA4B0-D090-4407-AD8C-87948349F44F'
+    # @json_response = http.request(request).read_body
     return [
         {
             "time_period_start": "2018-11-24T00:00:00.0000000Z",

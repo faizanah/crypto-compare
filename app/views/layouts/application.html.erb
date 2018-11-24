@@ -10,6 +10,20 @@
   </head>
 
   <body>
-    <%= yield %>
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <%= link_to 'Crypto Comparison', root_path, class: 'navbar-brand' %>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+  <div class="vertical-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
   </body>
 </html>
