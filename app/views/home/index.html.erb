@@ -1,6 +1,6 @@
 <div class="card" style="margin-top: 50px;">
   <div class="card-body">
     <h5 class="card-title">BitCoin</h5>
-    <%= line_chart @currencies %>
+    <%= line_chart @currencies, xtitle: "Interval", ytitle: "Rate", prefix: "$", download: true, messages: {empty: "No data"}, dataset: {borderWidth: 10}  %>
   </div>
 </div>

@@ -4,14 +4,14 @@
     <title>CryptoCompare</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
   <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <%= link_to 'Crypto Comparison', root_path, class: 'navbar-brand' %>
+    <%= link_to 'Crypto Book', root_path, class: 'navbar-brand' %>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
       <span class="navbar-toggler-icon"></span>
     </button>
