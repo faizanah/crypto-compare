@@ -7,11 +7,10 @@
 <script>
     console.log(<%= @currencies %>);
     Highcharts.stockChart('charts', {
-
-
         rangeSelector: {
-            selected: 0
+            selected: 2
         },
+
 
         title: {
             text: 'Bit Coin Exchange rate'
@@ -22,9 +21,10 @@
                 width: '200px'
             },
             valueDecimals: 2,
-            shared: true
+            shared: true,
+            valuePrefix: '$',
+            valueSuffix: ' USD'
         },
-
         yAxis: {
             title: {
                 text: 'Exchange rate'
@@ -32,9 +32,18 @@
         },
 
         series: [{
-            name: 'BitCoin price',
+            type: 'ohlc',
+            name: 'BitCoin Exchange rate',
             data: <%= @currencies %>,
-            id: 'dataseries'
+            dataGrouping: {
+                units: [[
+                    'week', // unit name
+                    [1] // allowed multiples
+                ], [
+                    'month',
+                    [1, 2, 3, 4, 6]
+                ]]
+            }
         }]
     });
 </script>

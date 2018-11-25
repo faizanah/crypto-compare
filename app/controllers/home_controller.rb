@@ -2,11 +2,10 @@ class HomeController < ApplicationController
   def index
     @currencies = []
     data.each do |row|
-      @currencies.push([row['time_close'].to_datetime.to_i, row['price_close']])
+      @currencies.push([row['time_close'].to_datetime.to_i, row['price_open'],row['price_high'], row['price_low'], row['price_close']])
     end
     puts @currencies
   end
-
 
   def data
     # Sample Response Data from coin API
